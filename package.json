@@ -4,6 +4,7 @@
   "private": true,
   "description": "Boilerplate for Advanced HTML/CSS Tools UOC students",
   "scripts": {
+    "stylelint": "stylelint src/**/*.scss",
     "parcel:serve": "parcel -p 8123 --target web --open",
     "parcel:build": "parcel build --target web --no-source-maps --no-cache",
     "clean": "rimraf dist .cache .cache-loader .parcel-cache",
@@ -42,6 +43,14 @@
     "postcss-preset-env": "^9.1.1",
     "posthtml-include": "^1.7.4",
     "rimraf": "^5.0.1",
-    "sharp": "^0.31.3"
+    "sharp": "^0.31.3",
+    "stylelint": "^16.10.0",
+    "stylelint-config-recommended-scss": "^14.1.0",
+    "stylelint-scss": "^6.9.0",
+    "stylelint-selector-bem-pattern": "^4.0.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "bootstrap": "^5.3.3"
   }
 }
