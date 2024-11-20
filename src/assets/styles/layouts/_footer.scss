@@ -32,14 +32,18 @@
   &__social-list-item { width: fit-content; }
 }
 
+@include media-breakpoint-up(sm) {
+  .footer {
+    &__contact {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
 @include media-breakpoint-up(md) {
   .footer {
     &__links {
       display: flex !important;
-    }
-
-    &__contact {
-      margin-bottom: 0 !important;
     }
   }
 }
