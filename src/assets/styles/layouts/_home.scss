@@ -1,8 +1,55 @@
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@use "sass:map";
 
-  width: 100vw;
-  height: 70vh;
+// This forces the div.container to use all the
+// remaining space
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  height: 100vh;
+}
+
+.container {
+  margin: 0;
+  height: 55vh;
+  width: 100%;
+  max-width: 100%;
+
+  background-image: url('../images/background-home.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.title {
+  margin-inline: auto;
+  margin-block: 5vh;
+  width: 100%;
+
+  text-align: center;
+  text-shadow: 1px 2px 4px map.get($theme-colors, "dark");
+
+  &--dot {
+    font-family: "Doto", sans-serif;
+    font-weight: 900;
+  }
+
+  &--left,
+  &--right { display: none; }
+}
+
+.participants,
+.info {
+  &__title {
+    font-size: map.get($font-sizes, 4);
+    text-shadow: 1px 2px 4px map.get($theme-colors, "dark");
+  }
+
+  &__text {
+    font-size: map.get($font-sizes, 5);
+  }
+
+  &__link {
+    color: map.get($theme-colors, "secondary");
+    text-shadow: 1px 2px 4px map.get($theme-colors, "dark");
+  }
 }
