@@ -1,6 +1,4 @@
-// @use "sass:color";
-
-$font-family: "Roboto", serif;
+$font-family-sans-serif: "Roboto", serif;
 
 $navy-blue: #000078;
 $navy-blue-p3: color(display-p3 0 0 .47);
@@ -25,3 +23,11 @@ $theme-colors: (
   "dark":       $navy-blue
 );
 
+$font-sizes: (
+  1: 2rem,
+  2: 1.6rem,
+  3: 1.4rem,
+  4: 1.2rem,
+  5: 0.9rem,
+  6: 0.8rem
+);
