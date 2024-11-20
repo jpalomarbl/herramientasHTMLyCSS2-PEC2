@@ -1,0 +1,41 @@
+@use "sass:map";
+
+.footer {
+  &__links { display: none !important; }
+
+  &__brand {
+    margin: auto;
+    width: 100%;
+
+    text-align: center;
+  }
+
+  &__logo { font-size: map.get($font-sizes, 1); }
+
+  &__title {
+    font-size: map.get($font-sizes, 3);
+
+    &--dot {
+      font-family: "Doto", sans-serif;
+      font-weight: 900;
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: row;
+
+    margin: auto;
+    width: 100%;
+  }
+
+  &__social-list-item { width: fit-content; }
+}
+
+@include media-breakpoint-up(sm) {
+  .footer {
+    &__links {
+      display: flex !important;
+    }
+  }
+}

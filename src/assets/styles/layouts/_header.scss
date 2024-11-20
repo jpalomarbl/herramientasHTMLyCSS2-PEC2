@@ -1,3 +1,8 @@
 .header {
-  
+  &__title {
+    &--dot {
+      font-family: "Doto", sans-serif;
+      font-weight: 900;
+    }
+  }
 }
