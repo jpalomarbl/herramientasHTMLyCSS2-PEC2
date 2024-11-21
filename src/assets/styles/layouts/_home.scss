@@ -2,22 +2,32 @@
 
 // This forces the div.container to use all the
 // remaining space
-body {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+html, body {
+  height: 100%; /* Asegura que el html y body ocupen todo el viewport */
+}
 
-  height: 100vh;
+body {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
 }
 
 .container {
+
+  flex-grow: 1;
   margin: 0;
   height: 55vh;
   width: 100%;
-  max-width: 100%;
+  max-width: none;
+
+  color: map.get($theme-colors, "info");
 
   background-image: url('../images/background-home.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+
+  overflow: hidden;
 }
 
 .title {
@@ -37,7 +47,6 @@ body {
   &--right { display: none; }
 }
 
-.participants,
 .info {
   &__title {
     font-size: map.get($font-sizes, 4);
@@ -51,5 +60,139 @@ body {
   &__link {
     color: map.get($theme-colors, "secondary");
     text-shadow: 1px 2px 4px map.get($theme-colors, "dark");
+  }
+}
+
+@supports (display: grid) {
+  .container {
+    display: grid;
+    grid-template-columns: [cyber] .5fr [space] 2fr [secure] .5fr;
+    grid-template-rows: 1fr;
+
+    padding: 0;
+    height: fit-content;
+
+    container-type: inline-size;
+  }
+
+  .title {
+    margin: auto;
+
+    font-size: 7.4rem;
+
+    writing-mode: vertical-lr;
+
+    &--dot {
+      height: fit-content;
+      width: fit-content;
+
+      text-align: center;
+    }
+
+    &--hidden { display: none; }
+
+    &--left,
+    &--right { display: block; }
+
+    &--left {
+      grid-column-start: cyber;
+      grid-column-end: cyber;
+
+      writing-mode: vertical-lr;
+      letter-spacing: .5rem;
+    }
+
+    &--right {
+      grid-column-start: secure;
+      grid-column-end: secure;
+
+      writing-mode: vertical-rl;
+    }
+  }
+
+  // The selected breakpoint corresponds to
+  // the "sm" breakpoint from Bootstrap Documentation
+  @container (max-width: 576px) {
+    .title {
+      font-size: 6rem;
+    }
+  }
+
+  // This is an arbitrary "mobile-size" breakpoint
+  @container (max-width: 412px) {
+    .title {
+      font-size: 4rem;
+    }
+  }
+
+  .info {
+    grid-column-start: space;
+    grid-column-end: space;
+
+    grid-row-start: 1;
+    grid-row-end: 1;
+
+    padding-inline: 3vw;
+    padding-top: 2vh;
+    padding-bottom: 1vh;
+    margin: auto;
+    height: fit-content;
+
+    background-color: map.get($theme-colors, "dark");
+    box-shadow: 10px 10px 8px 0px rgba(0, 0, 0, .5);
+
+    animation-name: info-animation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+
+    &__title {
+      margin-bottom: 2vh;
+
+      text-align: center;
+      font-family: "Doto", sans-serif;
+      font-weight: 900;
+    }
+
+    &__text { text-align: justify; }
+
+    &__link {
+      color: map.get($theme-colors, "dark");
+      text-decoration: none;
+      text-shadow: none;
+
+      background-color: map.get($theme-colors, "light");
+    }
+
+    &__link:hover { color: map.get($theme-colors, "primary"); }
+  }
+
+  // The selected breakpoint corresponds to
+  // the "sm" breakpoint from Bootstrap Documentation
+  @container (max-width: 576px) {
+    .info {
+      &__title {
+        font-size: map.get($font-sizes, 5);
+      }
+
+      &__text {
+        font-size: map.get($font-sizes, 6);
+      }
+    }
+  }
+}
+
+@keyframes info-animation {
+  0% {
+    transform: translateY(-.5vh);
+  }
+
+  50% {
+    transform: translateY(.5vh);
+  }
+
+  100% {
+    transform: translateY(-.5vh);
   }
 }
