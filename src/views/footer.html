@@ -1,19 +1,15 @@
 <footer class="footer">
-  <div class="w-100 px-5 py-1">
+  <div class="w-100 px-5 py-2">
     <div class="row">
-      <div class="footer__contact col mb-3">
+      <div class="footer__contact footer__contact--desktop col mb-3">
         <h6 class="text-center fs-5">Be a part of the event!</h6>
         <ul class="list-group list-group-flush fs-6">
-          <li
-            class="list-group-item text-center text-primary"
-          >
+          <li class="footer__list-item list-group-item text-center text-primary">
             <i class="fa-solid fa-phone text-dark"></i> /
             <i class="fa-brands fa-whatsapp text-dark"></i> 435-945-125
           </li>
 
-          <li
-            class="list-group-item text-center text-primary"
-          >
+          <li class="footer__list-item list-group-item text-center text-primary">
             <i class="fa-solid fa-envelope text-dark"></i>
             <a
               class="link-primary link-underline link-underline-opacity-0"
@@ -24,21 +20,15 @@
         </ul>
       </div>
 
-      <div class="col">
+      <div class="footer__contact footer__contact--desktop col">
         <h6 class="text-center fs-5">Need more info?</h6>
-        <ul
-          class="list-group list-group-flush fs-6"
-        >
-          <li
-            class="list-group-item text-center text-primary"
-          >
+        <ul class="list-group list-group-flush fs-6">
+          <li class="footer__list-item list-group-item text-center text-primary">
             <i class="fa-solid fa-phone text-dark"></i> /
             <i class="fa-brands fa-whatsapp text-dark"></i> 764-312-745
           </li>
 
-          <li
-            class="list-group-item text-center text-primary"
-          >
+          <li class="footer__list-item list-group-item text-center text-primary">
             <i class="fa-solid fa-envelope text-dark"></i>
             <a
               class="link-primary link-underline link-underline-opacity-0"
@@ -48,11 +38,37 @@
           </li>
         </ul>
       </div>
+
+      <div class="footer__contact footer__contact--mobile col">
+        <h6 class="text-center fs-5">Need more info or want to participate?</h6>
+        <ul class="footer__list-item list-group list-group-flush fs-6">
+          <li class="list-group-item text-center text-primary">
+            <i class="fa-solid fa-phone text-dark"></i> /
+            <i class="fa-brands fa-whatsapp text-dark"></i> 764-312-745
+          </li>
+
+          <li class="footer__list-item list-group-item text-center text-primary">
+            <i class="fa-solid fa-envelope text-dark"></i>
+            <a
+              class="link-primary link-underline link-underline-opacity-0"
+              href="mailto:info@cibersecure.com"
+              >info@cibersecure.com</a
+            > /
+            <a
+              class="link-primary link-underline link-underline-opacity-0"
+              href="mailto:part@cibersecure.com"
+              >part@cibersecure.com</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 
+  <hr class="footer__horizontal w-75 m-auto border-light">
+
   <nav
-    class="footer__navbar navbar navbar-expand-md navbar-light bg-light px-5 py-3"
+    class="footer__navbar navbar navbar-expand-md navbar-light bg-info px-5 pt-1 pb-3"
   >
     <a class="footer__brand navbar-brand text-primary fw-bold fs-4" href="#">
       <i class="footer__logo fa-solid fa-shield fs-2 me-2"></i>
@@ -79,9 +95,7 @@
       </li>
     </ul>
 
-    <ul
-      class="footer__social navbar-nav d-flex justify-content-center fs-5"
-    >
+    <ul class="footer__social navbar-nav d-flex justify-content-center fs-5">
       <li class="footer__social-list-item nav-item">
         <a class="footer__list-link nav-link link-primary" href="#"
           ><i class="fa-brands fa-google-plus-g"></i

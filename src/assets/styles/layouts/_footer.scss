@@ -1,6 +1,24 @@
 @use "sass:map";
 
 .footer {
+  &__contact {
+    &--desktop {
+      display: none;
+    }
+
+    &--mobile {
+      display: block;
+    }
+  }
+
+  &__list-item {
+    border: none !important;
+  }
+
+  &__horizontal {
+    border-width: 2px;
+  }
+
   &__links { display: none !important; }
 
   &__brand {
@@ -36,6 +54,14 @@
   .footer {
     &__contact {
       margin-bottom: 0 !important;
+
+      &--desktop {
+        display: block;
+      }
+
+      &--mobile {
+        display: none;
+      }
     }
   }
 }
