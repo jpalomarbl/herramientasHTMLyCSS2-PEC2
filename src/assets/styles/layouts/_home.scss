@@ -13,6 +13,7 @@ body {
   width: 100%;
 }
 
+/* @define container */
 .container {
 
   flex-grow: 1;
@@ -26,10 +27,9 @@ body {
   background-image: url('../images/background-home.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-
-  // overflow: hidden;
 }
 
+/* @define title */
 .title {
   margin-inline: auto;
   margin-block: 5vh;
@@ -47,6 +47,7 @@ body {
   &--right { display: none; }
 }
 
+/* @define info */
 .info {
   &__title {
     font-size: map.get($font-sizes, 4);
@@ -64,6 +65,7 @@ body {
 }
 
 @supports (display: grid) {
+  /* @define container */
   .container {
     display: grid;
     grid-template-columns: [cyber] .5fr [space] 2fr [secure] .5fr;
@@ -75,6 +77,7 @@ body {
     container-type: inline-size;
   }
 
+  /* @define title */
   .title {
     margin: auto;
 
@@ -113,6 +116,7 @@ body {
   // The selected breakpoint corresponds to
   // the "sm" breakpoint from Bootstrap Documentation
   @container (max-width: 576px) {
+    /* @define title */
     .title {
       font-size: 6rem;
     }
@@ -120,11 +124,13 @@ body {
 
   // This is an arbitrary "mobile-size" breakpoint
   @container (max-width: 412px) {
+    /* @define title */
     .title {
       font-size: 4rem;
     }
   }
 
+  /* @define info */
   .info {
     grid-column-start: space;
     grid-column-end: space;
