@@ -18,7 +18,7 @@
 // @import "some-node-module";
 // @import "@some-company/some-node-module";
 @import "npm:@fortawesome/fontawesome-free/css/all.css";
-@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "/node_modules/bootstrap/scss/bootstrap.scss";
 
 /**
  * Import fonts
@@ -32,9 +32,11 @@
  * It's a best practice to use a different partial for each page
  */
 
-@import "layouts/home";
-@import "layouts/header";
-@import "layouts/footer";
+@import "/src/assets/styles/layouts/_home.scss";
+@import "/src/assets/styles/layouts/_header.scss";
+@import "/src/assets/styles/layouts/_footer.scss";
+@import "/src/assets/styles/layouts/_speakers.scss";
+@import "/src/assets/styles/layouts/_speaker-card.scss";
 
 /**
  * Do NOT include anything else in this file!
