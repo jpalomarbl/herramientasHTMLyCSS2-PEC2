@@ -1,5 +1,30 @@
-@container(max-width: 500px) {
-  .card-body {
-    background-color: black;
+
+@use "sass:map";
+
+.speaker-card {
+  border: none;
+
+  &__img {
+    border-radius: 5px;
+  }
+
+  &__body {
+    color: map.get($theme-colors, "primary");
+  }
+
+  &__title {
+    font-size: map.get($font-sizes, 4);
+    text-align: center;
+  }
+
+  &__text {
+    font-size: map.get($font-sizes, 5);
+    text-align: center;
   }
 }
+
+// @container(max-width: 500px) {
+//   .card-body {
+//     background-color: black;
+//   }
+// }

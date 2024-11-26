@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="/src/assets/styles/main.scss" />
+
+    <!-- do not remove this line! -->
+    <title>Cyber Secure</title>
+  </head>
+  <body>
+    <include src="./views/header.html"></include>
+    <h1 class="title-speakers display-5">Speakers</h1>
+    <section class="container-speakers">
+      <include class="speaker-card" src="./views/speaker-card.html">
+        {
+          "imgUrl": "/src/assets/images/speakers/dimitry-volkov.jpg",
+          "title": "Dimitry Volkov",
+          "text": "Specialist in cryptography and IoT security, given Japan's advancements in cutting-edge technology."
+        }
+      </include>
+
+      <include src="./views/speaker-card.html">
+        {
+          "imgUrl": "/src/assets/images/speakers/aiko-nakamura.jpg",
+          "title": "Aiko Nakamura",
+          "text": "Cyber threat analyst, expert in malware and ransomware—fields where Russia has significance both defensively and offensively."
+        }
+      </include>
+
+      <include src="./views/speaker-card.html">
+        {
+          "imgUrl": "/src/assets/images/speakers/sophia-albrecht.jpg",
+          "title": "Sophia Albrecht",
+          "text": "Specialist in critical infrastructure security, with a focus on European standards."
+        }
+      </include>
+
+      <include src="./views/speaker-card.html">
+        {
+          "imgUrl": "/src/assets/images/speakers/omar-elsayed.jpg",
+          "title": "Omar El-Sayed",
+          "text": "Researcher in SCADA system security and medical device security, critical areas in the region."
+        }
+      </include>
+
+      <include src="./views/speaker-card.html">
+        {
+          "imgUrl": "/src/assets/images/speakers/priya-gupta.jpg",
+          "title": "Priya Gupta",
+          "text": "Leader in vulnerability analysis and cloud security, given India's growing focus on technology."
+        }
+      </include>
+
+      <include src="./views/speaker-card.html">
+        {
+          "imgUrl": "/src/assets/images/speakers/carlos-mendes.jpg",
+          "title": "Carlos Mendes",
+          "text": "Expert in application security and incident response, with an interest in financial cybersecurity."
+        }
+      </include>
+
+      <include src="./views/speaker-card.html">
+        {
+          "imgUrl": "/src/assets/images/speakers/ethan-reynolds.jpg",
+          "title": "Ethan Reynolds",
+          "text": "Offensive security consultant and pentester, active at conferences like DEF CON and Black Hat."
+        }
+      </include>
+
+      <include src="./views/speaker-card.html">
+        {
+          "imgUrl": "/src/assets/images/speakers/fatima-ben-ali.jpg",
+          "title": "Fatima Ben Ali",
+          "text": "Advocate for cybersecurity in telecommunications, especially in developing countries."
+        }
+      </include>
+
+      <include src="./views/speaker-card.html">
+        {
+          "imgUrl": "/src/assets/images/speakers/liam-oconnor.jpg",
+          "title": "Liam O'Connor",
+          "text": "Researcher in social engineering and phishing techniques, where psychology meets technology."
+        }
+      </include>
+
+      <include src="./views/speaker-card.html">
+        {
+          "imgUrl": "/src/assets/images/speakers/chen-wei.jpg",
+          "title": "Chen Wei",
+          "text": "Developer of cybersecurity algorithms based on artificial intelligence and machine learning."
+        }
+      </include>
+    </section>
+    <include src="./views/footer.html"></include>
+    <script type="module" src="/src/assets/scripts/main.js"></script>
+    <!-- do not remove this line! -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
