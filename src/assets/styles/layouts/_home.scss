@@ -187,6 +187,20 @@ body {
       }
     }
   }
+
+  // The selected breakpoint corresponds to
+  // the "xl" breakpoint from Bootstrap Documentation
+  @container (min-width: 1200px) {
+    .info {
+      &__title {
+        font-size: map.get($font-sizes, 3);
+      }
+
+      &__text {
+        font-size: map.get($font-sizes, 4);
+      }
+    }
+  }
 }
 
 @keyframes info-animation {
