@@ -9,10 +9,11 @@
   }
 
   &__body {
-    color: map.get($theme-colors, "primary");
+    color: map.get($theme-colors, "secondary");
   }
 
   &__title {
+    color: map.get($theme-colors, "primary");
     font-size: map.get($font-sizes, 4);
     text-align: center;
   }

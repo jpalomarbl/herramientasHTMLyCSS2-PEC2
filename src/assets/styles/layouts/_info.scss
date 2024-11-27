@@ -1,0 +1,169 @@
+@use "sass:map";
+
+// This forces the div.container to use all the
+  // remaining space
+  // html, body {
+  //   width: 100vw !important; /* Asegura que el html y body ocupen todo el viewport */
+  // }
+
+  // body {
+  //   display: flex;
+  //   flex-direction: column;
+
+  //   width: 100%;
+  // }
+
+@layer bootstrap, theme, display;
+
+@import url(/node_modules/bootstrap/scss/bootstrap.scss) layer(bootstrap);
+
+@layer theme {
+  .header-info {
+    background-image: url('/src/assets/images/info-bg-title.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &__title,
+    &__author {
+      color: map.get($theme-colors, "secondary") !important;
+      text-shadow: 1px 2px 4px map.get($theme-colors, "dark");
+    }
+  }
+
+  p:is(.begining-p1, .big-paragraph) {
+    font-size: map.get($font-sizes, 3);
+    font-weight: 300;
+  }
+}
+
+@layer display {
+  .container-info {
+    container-type: inline-size;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+  }
+
+  // The selected breakpoint corresponds to
+  // the "md" breakpoint from Bootstrap Documentation
+  @container (max-width: 768px) {
+    .header-info {
+      margin-bottom: 5vh;
+      height: 30vh;
+
+      &__title {
+        margin-bottom: 5vh !important;
+      }
+    }
+  }
+
+  // The selected breakpoint corresponds to
+  // the "md" breakpoint from Bootstrap Documentation
+  @container (min-width: 768px) {
+    .header-info {
+      margin-bottom: 10vh;
+      height: 50vh;
+
+      &__title {
+        margin-bottom: 10vh !important;
+      }
+    }
+  }
+
+  :is(.begining, .begining-p1, .begining-p2, .list-info, .big-paragraph, .before-img, .ending, ul, img) {
+    text-align: justify;
+  }
+
+  // The selected breakpoint corresponds to
+  // the "md" breakpoint from Bootstrap Documentation
+  @container (max-width: 768px) {
+    :is(.begining, .list-info, .big-paragraph, .before-img, .ending, ul, img) {
+      width: 80vw;
+    }
+  }
+
+  // The selected breakpoints correspond to
+  // the "md" and "lg" breakpoints from Bootstrap Documentation
+  @container (min-width: 768px) and (max-width: 992px) {
+    :is(.begining, .list-info, .big-paragraph, .before-img, .ending, ul, img) {
+      width: 60vw;
+    }
+  }
+
+  // The selected breakpoint correspond to
+  // the "lg" breakpoint from Bootstrap Documentation
+  @container (max-width: 992px) {
+    :is(.begining, .begining-p1, .begining-p2, .list-info, .big-paragraph, .before-img, .ending, ul, img) {
+      padding-inline: 0 !important;
+    }
+  }
+
+  .list-info {
+    margin-block: 5vh !important;
+    padding-top: 5vh;
+    padding-bottom: 3vh;
+
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-width: 2px;
+    border-color: map.get($theme-colors, "light");
+  }
+
+  .list-info__number {
+    // width: fit-content !important;
+    height: fit-content;
+
+    text-align: center;
+
+    border-style: solid;
+    border-color: map.get($theme-colors, "light");
+    border-width: 2px;
+    border-radius: 100px;
+  }
+
+  @container (min-width: 1200px) {
+    .list-info__number {
+      width: fit-content !important;
+    }
+  }
+
+  .image {
+    margin-block: 5vh;
+  }
+
+  .ending {
+    margin-bottom: 10vh !important;
+  }
+
+  // The selected breakpoint correspond to
+  // the "lg" breakpoint from Bootstrap Documentation
+  @container (min-width: 992px) {
+    :is(.begining, .list-info, .big-paragraph, .before-img, .ending, ul) {
+      width: 40vw;
+    }
+
+    .image {
+      width: 50vw;
+    }
+  }
+
+  @container (min-width: 1200px) {
+    .begining-p1 {
+      padding-left: 0 !important;
+    }
+
+    .begining-p2 {
+      padding-right: 0 !important;
+    }
+  }
+}
