@@ -1,23 +1,12 @@
 @use "sass:map";
 
-// This forces the div.container to use all the
-  // remaining space
-  // html, body {
-  //   width: 100vw !important; /* Asegura que el html y body ocupen todo el viewport */
-  // }
-
-  // body {
-  //   display: flex;
-  //   flex-direction: column;
-
-  //   width: 100%;
-  // }
-
-@layer bootstrap, theme, display;
-
-@import url(/node_modules/bootstrap/scss/bootstrap.scss) layer(bootstrap);
+@layer theme, display;
 
 @layer theme {
+  .container-info {
+    color: map.get($theme-colors, "primary");
+  }
+
   .header-info {
     background-image: url('/src/assets/images/info-bg-title.jpg');
     background-size: cover;
@@ -30,7 +19,7 @@
     }
   }
 
-  p:is(.begining-p1, .big-paragraph) {
+  :is(.begining-p1, .big-paragraph) {
     font-size: map.get($font-sizes, 3);
     font-weight: 300;
   }
@@ -56,7 +45,7 @@
 
   // The selected breakpoint corresponds to
   // the "md" breakpoint from Bootstrap Documentation
-  @container (max-width: 768px) {
+  @container (max-width: #{map.get($grid-breakpoints, "md")}) {
     .header-info {
       margin-bottom: 5vh;
       height: 30vh;
@@ -69,7 +58,7 @@
 
   // The selected breakpoint corresponds to
   // the "md" breakpoint from Bootstrap Documentation
-  @container (min-width: 768px) {
+  @container (min-width: #{map.get($grid-breakpoints, "md")}) {
     .header-info {
       margin-bottom: 10vh;
       height: 50vh;
@@ -86,7 +75,7 @@
 
   // The selected breakpoint corresponds to
   // the "md" breakpoint from Bootstrap Documentation
-  @container (max-width: 768px) {
+  @container (max-width: #{map.get($grid-breakpoints, "md")}) {
     :is(.begining, .list-info, .big-paragraph, .before-img, .ending, ul, img) {
       width: 80vw;
     }
@@ -94,7 +83,7 @@
 
   // The selected breakpoints correspond to
   // the "md" and "lg" breakpoints from Bootstrap Documentation
-  @container (min-width: 768px) and (max-width: 992px) {
+  @container (min-width: #{map.get($grid-breakpoints, "md")}) and (max-width: #{map.get($grid-breakpoints, "lg")}) {
     :is(.begining, .list-info, .big-paragraph, .before-img, .ending, ul, img) {
       width: 60vw;
     }
@@ -102,7 +91,7 @@
 
   // The selected breakpoint correspond to
   // the "lg" breakpoint from Bootstrap Documentation
-  @container (max-width: 992px) {
+  @container (max-width: #{map.get($grid-breakpoints, "lg")}) {
     :is(.begining, .begining-p1, .begining-p2, .list-info, .big-paragraph, .before-img, .ending, ul, img) {
       padding-inline: 0 !important;
     }
@@ -119,22 +108,9 @@
     border-color: map.get($theme-colors, "light");
   }
 
-  .list-info__number {
-    // width: fit-content !important;
-    height: fit-content;
-
-    text-align: center;
-
-    border-style: solid;
-    border-color: map.get($theme-colors, "light");
-    border-width: 2px;
-    border-radius: 100px;
-  }
-
-  @container (min-width: 1200px) {
-    .list-info__number {
-      width: fit-content !important;
-    }
+  .list-info ::marker {
+    color: map.get($theme-colors, "dark");
+    font-size: map.get($font-sizes, 3);
   }
 
   .image {
@@ -145,9 +121,7 @@
     margin-bottom: 10vh !important;
   }
 
-  // The selected breakpoint correspond to
-  // the "lg" breakpoint from Bootstrap Documentation
-  @container (min-width: 992px) {
+  @container (min-width: #{map.get($grid-breakpoints, "lg")}) {
     :is(.begining, .list-info, .big-paragraph, .before-img, .ending, ul) {
       width: 40vw;
     }
@@ -157,7 +131,7 @@
     }
   }
 
-  @container (min-width: 1200px) {
+  @container (min-width: #{map.get($grid-breakpoints, "xl")}) {
     .begining-p1 {
       padding-left: 0 !important;
     }

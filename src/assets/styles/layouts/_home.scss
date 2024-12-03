@@ -115,7 +115,7 @@ body {
 
   // The selected breakpoint corresponds to
   // the "sm" breakpoint from Bootstrap Documentation
-  @container (max-width: 576px) {
+  @container (max-width: #{map.get($grid-breakpoints, "sm")}) {
     /* @define title */
     .title {
       font-size: 6rem;
@@ -176,7 +176,7 @@ body {
 
   // The selected breakpoint corresponds to
   // the "sm" breakpoint from Bootstrap Documentation
-  @container (max-width: 576px) {
+  @container (max-width: #{map.get($grid-breakpoints, "sm")}) {
     .info {
       &__title {
         font-size: map.get($font-sizes, 5);
@@ -190,7 +190,7 @@ body {
 
   // The selected breakpoint corresponds to
   // the "xl" breakpoint from Bootstrap Documentation
-  @container (min-width: 1200px) {
+  @container (min-width: #{map.get($grid-breakpoints, "xl")}) {
     .info {
       &__title {
         font-size: map.get($font-sizes, 3);

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="/src/assets/styles/main.scss" />
+    <!-- do not remove this line! -->
+    <title>Cyber Secure</title>
+  </head>
+  <body>
+    <include src="./views/header.html"></include>
+    <section class="container-contact">
+      <h1 class="contact-title">Contact us!</h1>
+      <form class="contact-form" netlify>
+        <div class="contact-form__container contact-form__container--name">
+          <label class="contact-form__label contact-form__label--name" for="name">What's your name?</label>
+          <input type="text" name="name" placeholder="Jane Doe" required>
+        </div>
+
+        <div class="contact-form__container contact-form__container--email">
+          <label class="contact-form__label contact-form__label--email" for="email">How can we contact you?</label>
+          <input type="text" name="email" placeholder="doe_jane@email.com" required>
+        </div>
+
+        <div class="contact-form__container contact-form__container--phone">
+          <label class="contact-form__label contact-form__label--phone" for="phone">Mind sharing your phone number?</label>
+          <input type="tel" name="phone" placeholder="+56 987-654-321" pattern="^\+d{2}\s\d{3}-\d{3}-\d{3}$">
+        </div>
+
+        <div class="contact-form__container contact-form__container--subject">
+          <label class="contact-form__label contact-form__label--subject" for="subject">Very shortly, what did you want to tell us?</label>
+          <input type="text" name="subject" placeholder="Your subject goes here..." required>
+        </div>
+
+        <div class="contact-form__container contact-form__container--textarea">
+          <label class="contact-form__label contact-form__label--textarea" for="textarea">Now, explain yourself.</label>
+          <textarea name="textarea" placeholder="Well, I wanted to praise you because..."></textarea>
+        </div>
+      </form>
+
+    </section>
+    <include src="./views/footer.html"></include>
+    <script type="module" src="/src/assets/scripts/main.js"></script>
+    <!-- do not remove this line! -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

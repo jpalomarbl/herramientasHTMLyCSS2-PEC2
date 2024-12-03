@@ -23,6 +23,14 @@ $theme-colors: (
   "dark":       $navy-blue
 );
 
+$theme-colors-p3: (
+  "primary":    $steel-blue-p3,
+  "secondary":  $celestial-blue-p3,
+  "info":       $white-p3,
+  "light":      $alice-blue-p3,
+  "dark":       $navy-blue-p3
+);
+
 $font-sizes: (
   1: 2rem,
   2: 1.6rem,
