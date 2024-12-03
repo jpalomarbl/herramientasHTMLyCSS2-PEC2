@@ -3,7 +3,7 @@
 // This forces the div.container to use all the
 // remaining space
 html, body {
-  height: 100%; /* Asegura que el html y body ocupen todo el viewport */
+  height: 100dvh; /* Asegura que el html y body ocupen todo el viewport */
 }
 
 body {
@@ -15,7 +15,6 @@ body {
 
 /* @define container */
 .container {
-
   flex-grow: 1;
   margin: 0;
   height: 55vh;

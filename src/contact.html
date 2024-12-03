@@ -11,31 +11,35 @@
   <body>
     <include src="./views/header.html"></include>
     <section class="container-contact">
-      <h1 class="contact-title">Contact us!</h1>
+      <h1 class="contact-form__title">Contact us!</h1>
       <form class="contact-form" netlify>
         <div class="contact-form__container contact-form__container--name">
-          <label class="contact-form__label contact-form__label--name" for="name">What's your name?</label>
-          <input type="text" name="name" placeholder="Jane Doe" required>
+          <label class="contact-form__label contact-form__label--name" for="name">What's your name?*</label>
+          <input class="contact-form__input contact-form__input--name" type="text" name="name" placeholder="Jane Doe" required>
         </div>
 
         <div class="contact-form__container contact-form__container--email">
-          <label class="contact-form__label contact-form__label--email" for="email">How can we contact you?</label>
-          <input type="text" name="email" placeholder="doe_jane@email.com" required>
+          <label class="contact-form__label contact-form__label--email" for="email">How can we contact you?*</label>
+          <input class="contact-form__input contact-form__input--email" type="text" name="email" placeholder="doe_jane@email.com" required>
         </div>
 
         <div class="contact-form__container contact-form__container--phone">
           <label class="contact-form__label contact-form__label--phone" for="phone">Mind sharing your phone number?</label>
-          <input type="tel" name="phone" placeholder="+56 987-654-321" pattern="^\+d{2}\s\d{3}-\d{3}-\d{3}$">
+          <input class="contact-form__input contact-form__input--phone" type="tel" name="phone" placeholder="+56 987-654-321" pattern="^\+d{2}\s\d{3}-\d{3}-\d{3}$">
         </div>
 
         <div class="contact-form__container contact-form__container--subject">
-          <label class="contact-form__label contact-form__label--subject" for="subject">Very shortly, what did you want to tell us?</label>
-          <input type="text" name="subject" placeholder="Your subject goes here..." required>
+          <label class="contact-form__label contact-form__label--subject" for="subject">Very shortly, what did you want to tell us?*</label>
+          <input class="contact-form__input contact-form__input--subject" type="text" name="subject" placeholder="Your subject goes here..." required>
         </div>
 
         <div class="contact-form__container contact-form__container--textarea">
-          <label class="contact-form__label contact-form__label--textarea" for="textarea">Now, explain yourself.</label>
-          <textarea name="textarea" placeholder="Well, I wanted to praise you because..."></textarea>
+          <label class="contact-form__label contact-form__label--textarea" for="textarea">Now, explain yourself*</label>
+          <textarea class="contact-form__input contact-form__input--textarea" name="textarea" placeholder="Well, I wanted to praise you because..." required></textarea>
+        </div>
+
+        <div class="contact-form__container contact-form__container--button">
+          <input class="contact-form__input contact-form__input--button" type="submit" value="Send!">
         </div>
       </form>
 

@@ -1,0 +1,188 @@
+@use "sass:map";
+
+@layer display, theme, effects, colors;
+
+@layer theme {
+  .contact-form {
+    &__container {
+      &--name {
+        background-color: map.get($theme-colors, "primary");
+      }
+
+      &--email {
+        background-color: map.get($theme-colors, "secondary");
+      }
+
+      &--phone {
+        background-color: map.get($theme-colors, "info");
+      }
+
+      &--subject {
+        background-color: map.get($theme-colors, "light");
+      }
+
+      &--textarea {
+        background-color: map.get($theme-colors, "dark");
+      }
+
+      &--button {
+        background-image: linear-gradient(
+          90deg,
+          map.get($theme-colors, "light") 0%,
+          map.get($theme-colors, "primary") 25%,
+          map.get($theme-colors, "secondary") 50%,
+          map.get($theme-colors, "dark") 75%,
+          map.get($theme-colors, "light") 100%
+        );
+      }
+    }
+
+    &__label {
+      font-size: .8rem;
+      font-weight: 500;
+      color: map.get($theme-colors, "dark");
+
+      &--textarea {
+        color: map.get($theme-colors, "light");
+      }
+    }
+
+    &__input {
+      height: 2.5rem;
+
+      color: map.get($theme-colors, "dark");
+
+      border: none;
+      border-radius: 2px;
+
+      &--phone {
+        border-style: solid;
+        border-color: map-get($theme-colors, "light");
+      }
+
+      &--button {
+        box-shadow: 3px 4px 13px -1px map.get($theme-colors, "dark");
+      }
+    }
+  }
+}
+
+@layer effects {
+  .contact-form {
+    &__container:hover > &__label {
+      font-size: 1rem;
+
+      transition: font-size .2s ease-in-out;
+    }
+
+    &__container {
+      &--button:hover {
+        animation: slidebg 15s linear infinite;
+      }
+
+      &--button:hover > .contact-form__input--button {
+        transform: scale(1.05);
+
+        transition: transform .2s ease-in-out;
+      }
+    }
+  }
+
+  @keyframes slidebg {
+    to {
+      background-position:200vw;
+    }
+  }
+}
+
+@layer display {
+  .container-contact {
+    container-type: inline-size;
+
+    margin-top: 5vh;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+
+    height: 60vh;
+
+    &__title { text-align: center; }
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+
+      padding-inline: 10vw;
+      margin-block: 1vh;
+    }
+
+    &__input {
+      &--textarea {
+        height: 40%;
+      }
+    }
+  }
+
+  @container (min-width: #{map.get($grid-breakpoints, "lg")}) {
+    .contact-form {
+      display: grid;
+      grid-template-columns: [contact1] 1fr [contact2] 1fr [textarea] 4fr;
+      grid-template-rows: [name] 1fr [email-phone1] 1fr [email-phone2] 1fr;
+
+      &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        margin: 0;
+        padding-inline: 2vw;
+
+        &--name {
+          grid-column-start: contact1;
+          grid-column-end: textarea;
+        }
+
+        &--email {
+          grid-column-start: contact1;
+          grid-column-end: contact2;
+        }
+
+        &--phone {
+          grid-column-start: contact2;
+          grid-column-end: textarea;
+        }
+
+        &--subject {
+          grid-column-start: textarea;
+          grid-column-end: textarea;
+          grid-row-start: name;
+          grid-row-end: name;
+        }
+
+        &--textarea {
+          grid-column-start: textarea;
+          grid-column-end: textarea;
+          grid-row-start: email-phone1;
+          grid-row-end: email-phone1;
+        }
+
+        &--button {
+          grid-column-start: contact1;
+          grid-column-end: text-area;
+          grid-row-start: email-phone2;
+          grid-row-end: email-phone2;
+        }
+      }
+
+      &__input {
+        &--button {
+          width: 30%;
+          margin: auto !important;
+        }
+      }
+    }
+  }
+}

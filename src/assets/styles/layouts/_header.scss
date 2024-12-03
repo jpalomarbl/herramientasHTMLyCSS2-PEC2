@@ -1,8 +1,16 @@
+@use "sass:map";
+
 .header {
   &__title {
     &--dot {
       font-family: "Doto", sans-serif;
       font-weight: 900;
     }
+  }
+
+  &--bottom-border {
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: map.get($theme-colors, "light");
   }
 }
