@@ -1,6 +1,9 @@
 @use "sass:map";
 
 .footer {
+  // This holds all of the contact information.
+  // There are two contact lists. A longer one for desktop
+  // and a shorter one for mobile.
   &__contact {
     &--desktop {
       display: none;

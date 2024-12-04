@@ -13,15 +13,8 @@ body {
   width: 100%;
 }
 
-/* @define title-speakers */
-.title-speakers {
-  margin-top: 10vh;
-
-  color: map.get($theme-colors, "primary");
-  text-align: center;
-}
-
 /* @define container-speakers */
+// The main container for the speakers page.
 .container-speakers {
   container-type: inline-size;
 
@@ -35,6 +28,17 @@ body {
   width: 100%;
 }
 
+/* @define title-speakers */
+.title-speakers {
+  margin-top: 10vh;
+
+  color: map.get($theme-colors, "primary");
+  text-align: center;
+}
+
+// We've defined .container-speakers as our main container for the container queries.
+// This means that we cannot edit .container-speakers inside of a container query.
+// Therefor, we have to use traditional media queries for this small block of code.
 @media screen and (min-width: #{map.get($grid-breakpoints, "md")}) {
   .container-speakers {
     flex-direction: row;

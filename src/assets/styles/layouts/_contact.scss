@@ -1,7 +1,10 @@
 @use "sass:map";
 
+// This layer holds all of the positioning, spacing and sizing rules.
+// This is the only layer used for screen sizes smaller than desktop.
 @layer display {
   /* @define container-contact */
+  // The main container for the contact page.
   .container-contact {
     container-type: inline-size;
 
@@ -17,6 +20,7 @@
 
     &__title { text-align: center; }
 
+    // Every input-layer pair has its own container.
     &__container {
       display: flex;
       flex-direction: column;
@@ -43,6 +47,7 @@
 
       height: 60dvh;
 
+      // Every input-layer pair has its own container.
       &__container {
         display: flex;
         flex-direction: column;
@@ -102,7 +107,13 @@
   }
 }
 
+// For desktop screen sizes we add a lot of flavour and coloring
+// to the contact form page.
 @container (min-width: #{map.get($grid-breakpoints, "lg")}) {
+  // The theme layer holds the default colors, backgrounds and font configurations.
+  // The effects layer sets hovers and animations.
+  // The color-p3 layer overrides the default colors with color-p3 colors
+  // only if the browser supports them.
   @layer theme, effects, colors-p3;
 
   @layer theme {
@@ -248,6 +259,7 @@
       }
     }
 
+    // The gradient background sliding animation for the button.
     @keyframes slidebg {
       to {
         background-position:200vw;

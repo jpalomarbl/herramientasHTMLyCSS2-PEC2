@@ -1,14 +1,18 @@
 @use "sass:map";
 
+// Theme holds all of the fonts, colors, backgrounds, etc.
+// Display holds all positioning and spacing configurations.
 @layer theme, display;
 
 @layer theme {
   /* @define container-info */
+  // Main container for info page
   .container-info {
     color: map.get($theme-colors, "primary");
   }
 
   /* @define header-info */
+  // This container holds the title and author of the article
   .header-info {
     background-image: url('/src/assets/images/info-bg-title.jpg');
     background-size: cover;
@@ -21,7 +25,8 @@
     }
   }
 
-  :is(.begining-p1, .big-paragraph) {
+  // These two paragraphs have a bigger font size.
+  :is(.begining__p1, .big-paragraph) {
     font-size: map.get($font-sizes, 3);
     font-weight: 300;
   }
@@ -29,6 +34,7 @@
 
 @layer display {
   /* @define container-info */
+  // Main container for info page
   .container-info {
     container-type: inline-size;
 
@@ -38,6 +44,7 @@
   }
 
   /* @define header-info */
+  // This container holds the title and author of the article
   .header-info {
     display: flex;
     flex-direction: column;
@@ -48,6 +55,8 @@
   }
 
   @container (max-width: #{map.get($grid-breakpoints, "md")}) {
+    /* @define header-info */
+    // This container holds the title and author of the article
     .header-info {
       margin-bottom: 5vh;
       height: 30vh;
@@ -59,6 +68,8 @@
   }
 
   @container (min-width: #{map.get($grid-breakpoints, "md")}) {
+    /* @define header-info */
+    // This container holds the title and author of the article
     .header-info {
       margin-bottom: 10vh;
       height: 50vh;
@@ -69,24 +80,28 @@
     }
   }
 
-  :is(.begining, .begining-p1, .begining-p2, .list-info, .big-paragraph, .before-img, .ending, ul, img) {
+  // This basically groups and selects all of the text, text containers and the image.
+  :is(.begining, .begining__p1, .begining__p2, .list-info, .big-paragraph, .before-img, .ending, img) {
     text-align: justify;
   }
 
   @container (max-width: #{map.get($grid-breakpoints, "md")}) {
-    :is(.begining, .list-info, .big-paragraph, .before-img, .ending, ul, img) {
+    // This basically groups and selects all of the text, text containers and the image.
+    :is(.begining, .list-info, .big-paragraph, .before-img, .ending, img) {
       width: 80vw;
     }
   }
 
   @container (min-width: #{map.get($grid-breakpoints, "md")}) and (max-width: #{map.get($grid-breakpoints, "lg")}) {
+    // This basically groups and selects all of the text, text containers and the image.
     :is(.begining, .list-info, .big-paragraph, .before-img, .ending, ul, img) {
       width: 60vw;
     }
   }
 
   @container (max-width: #{map.get($grid-breakpoints, "lg")}) {
-    :is(.begining, .begining-p1, .begining-p2, .list-info, .big-paragraph, .before-img, .ending, ul, img) {
+    // This basically groups and selects all of the text, text containers and the image.
+    :is(.begining, .begining__p1, .begining__p2, .list-info, .big-paragraph, .before-img, .ending, ul, img) {
       padding-inline: 0 !important;
     }
   }
@@ -103,6 +118,7 @@
     border-color: map.get($theme-colors, "light");
   }
 
+  // This selects the numbers of the ordered list.
   .list-info ::marker {
     color: map.get($theme-colors, "dark");
     font-size: map.get($font-sizes, 3);
@@ -114,6 +130,7 @@
   }
 
   /* @define ending */
+  // The las paragraph.
   .ending {
     margin-bottom: 10vh !important;
   }
@@ -130,13 +147,13 @@
   }
 
   @container (min-width: #{map.get($grid-breakpoints, "xl")}) {
-    /* @define begining-p1 */
-    .begining-p1 {
+    /* @define begining__p1 */
+    .begining__p1 {
       padding-left: 0 !important;
     }
 
-    /* @define begining-p2 */
-    .begining-p2 {
+    /* @define begining__p2 */
+    .begining__p2 {
       padding-right: 0 !important;
     }
   }
