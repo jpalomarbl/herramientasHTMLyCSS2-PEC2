@@ -112,8 +112,6 @@ body {
     }
   }
 
-  // The selected breakpoint corresponds to
-  // the "sm" breakpoint from Bootstrap Documentation
   @container (max-width: #{map.get($grid-breakpoints, "sm")}) {
     /* @define title */
     .title {
@@ -173,8 +171,6 @@ body {
     &__link:hover { color: map.get($theme-colors, "primary"); }
   }
 
-  // The selected breakpoint corresponds to
-  // the "sm" breakpoint from Bootstrap Documentation
   @container (max-width: #{map.get($grid-breakpoints, "sm")}) {
     .info {
       &__title {
@@ -187,8 +183,6 @@ body {
     }
   }
 
-  // The selected breakpoint corresponds to
-  // the "xl" breakpoint from Bootstrap Documentation
   @container (min-width: #{map.get($grid-breakpoints, "xl")}) {
     .info {
       &__title {

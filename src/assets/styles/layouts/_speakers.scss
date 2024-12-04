@@ -35,8 +35,6 @@ body {
   width: 100%;
 }
 
-// The selected breakpoint corresponds to
-// the "md" breakpoint from Bootstrap Documentation
 @media screen and (min-width: #{map.get($grid-breakpoints, "md")}) {
   .container-speakers {
     flex-direction: row;
@@ -54,23 +52,18 @@ body {
   margin-bottom: 5vh;
 }
 
-// The selected breakpoint corresponds to
-// the "sm" breakpoint from Bootstrap Documentation
 @container (max-width: #{map.get($grid-breakpoints, "sm")}) {
   .speaker-card {
     flex: 0 0 70cqw;
   }
 }
-// The selected breakpoint corresponds to
-// the "md" breakpoint from Bootstrap Documentation
+
 @container (max-width: #{map.get($grid-breakpoints, "md")}) {
   .speaker-card {
     flex: 0 0 60cqw;
   }
 }
 
-// The selected breakpoint corresponds to
-// the "xl" breakpoint from Bootstrap Documentation
 @container (min-width: #{map.get($grid-breakpoints, "xl")}) {
   .speaker-card {
     flex: 0 0 30cqw;

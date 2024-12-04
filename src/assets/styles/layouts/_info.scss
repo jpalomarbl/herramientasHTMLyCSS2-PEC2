@@ -47,8 +47,6 @@
     width: 100%;
   }
 
-  // The selected breakpoint corresponds to
-  // the "md" breakpoint from Bootstrap Documentation
   @container (max-width: #{map.get($grid-breakpoints, "md")}) {
     .header-info {
       margin-bottom: 5vh;
@@ -60,8 +58,6 @@
     }
   }
 
-  // The selected breakpoint corresponds to
-  // the "md" breakpoint from Bootstrap Documentation
   @container (min-width: #{map.get($grid-breakpoints, "md")}) {
     .header-info {
       margin-bottom: 10vh;
@@ -77,24 +73,18 @@
     text-align: justify;
   }
 
-  // The selected breakpoint corresponds to
-  // the "md" breakpoint from Bootstrap Documentation
   @container (max-width: #{map.get($grid-breakpoints, "md")}) {
     :is(.begining, .list-info, .big-paragraph, .before-img, .ending, ul, img) {
       width: 80vw;
     }
   }
 
-  // The selected breakpoints correspond to
-  // the "md" and "lg" breakpoints from Bootstrap Documentation
   @container (min-width: #{map.get($grid-breakpoints, "md")}) and (max-width: #{map.get($grid-breakpoints, "lg")}) {
     :is(.begining, .list-info, .big-paragraph, .before-img, .ending, ul, img) {
       width: 60vw;
     }
   }
 
-  // The selected breakpoint correspond to
-  // the "lg" breakpoint from Bootstrap Documentation
   @container (max-width: #{map.get($grid-breakpoints, "lg")}) {
     :is(.begining, .begining-p1, .begining-p2, .list-info, .big-paragraph, .before-img, .ending, ul, img) {
       padding-inline: 0 !important;
