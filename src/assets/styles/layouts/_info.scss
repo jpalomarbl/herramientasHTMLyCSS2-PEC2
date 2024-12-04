@@ -3,10 +3,12 @@
 @layer theme, display;
 
 @layer theme {
+  /* @define container-info */
   .container-info {
     color: map.get($theme-colors, "primary");
   }
 
+  /* @define header-info */
   .header-info {
     background-image: url('/src/assets/images/info-bg-title.jpg');
     background-size: cover;
@@ -26,6 +28,7 @@
 }
 
 @layer display {
+  /* @define container-info */
   .container-info {
     container-type: inline-size;
 
@@ -34,6 +37,7 @@
     align-items: center;
   }
 
+  /* @define header-info */
   .header-info {
     display: flex;
     flex-direction: column;
@@ -97,6 +101,7 @@
     }
   }
 
+  /* @define list-info */
   .list-info {
     margin-block: 5vh !important;
     padding-top: 5vh;
@@ -113,10 +118,12 @@
     font-size: map.get($font-sizes, 3);
   }
 
+  /* @define image */
   .image {
     margin-block: 5vh;
   }
 
+  /* @define ending */
   .ending {
     margin-bottom: 10vh !important;
   }
@@ -126,16 +133,19 @@
       width: 40vw;
     }
 
+    /* @define image */
     .image {
       width: 50vw;
     }
   }
 
   @container (min-width: #{map.get($grid-breakpoints, "xl")}) {
+    /* @define begining-p1 */
     .begining-p1 {
       padding-left: 0 !important;
     }
 
+    /* @define begining-p2 */
     .begining-p2 {
       padding-right: 0 !important;
     }
