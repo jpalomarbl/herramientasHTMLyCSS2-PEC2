@@ -40,6 +40,7 @@ body {
 // This means that we cannot edit .container-speakers inside of a container query.
 // Therefor, we have to use traditional media queries for this small block of code.
 @media screen and (min-width: #{map.get($grid-breakpoints, "md")}) {
+  /* @define container-speakers */
   .container-speakers {
     flex-direction: row;
     flex-wrap: wrap;

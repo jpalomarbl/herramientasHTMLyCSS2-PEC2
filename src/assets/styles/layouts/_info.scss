@@ -147,12 +147,12 @@
   }
 
   @container (min-width: #{map.get($grid-breakpoints, "xl")}) {
-    /* @define begining__p1 */
+    /* @define begining */
     .begining__p1 {
       padding-left: 0 !important;
     }
 
-    /* @define begining__p2 */
+
     .begining__p2 {
       padding-right: 0 !important;
     }
