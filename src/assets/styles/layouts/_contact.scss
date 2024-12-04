@@ -1,96 +1,157 @@
 @use "sass:map";
 
-@layer display, theme, effects, colors;
+@layer display;
 
-@layer theme {
-  .contact-form {
-    &__container {
-      &--name {
-        background-color: map.get($theme-colors, "primary");
+@container (min-width: #{map.get($grid-breakpoints, "lg")}) {
+  @layer theme, effects, colors-p3;
+
+  @layer theme {
+    .contact-form {
+      &__container {
+        &--name {
+          background-color: map.get($theme-colors, "primary");
+        }
+
+        &--email {
+          background-color: map.get($theme-colors, "secondary");
+        }
+
+        &--phone {
+          background-color: map.get($theme-colors, "info");
+        }
+
+        &--subject {
+          background-color: map.get($theme-colors, "light");
+        }
+
+        &--textarea {
+          background-color: map.get($theme-colors, "dark");
+        }
+
+        &--button {
+          background-image: linear-gradient(
+            90deg,
+            map.get($theme-colors, "light") 0%,
+            map.get($theme-colors, "primary") 25%,
+            map.get($theme-colors, "secondary") 50%,
+            map.get($theme-colors, "dark") 75%,
+            map.get($theme-colors, "light") 100%
+          );
+        }
       }
 
-      &--email {
-        background-color: map.get($theme-colors, "secondary");
+      &__label {
+        font-size: .8rem;
+        font-weight: 500;
+        color: map.get($theme-colors, "dark");
+
+        &--textarea {
+          color: map.get($theme-colors, "light");
+        }
       }
 
-      &--phone {
-        background-color: map.get($theme-colors, "info");
-      }
+      &__input {
+        color: map.get($theme-colors, "dark");
 
-      &--subject {
-        background-color: map.get($theme-colors, "light");
-      }
+        border: none;
+        border-radius: 2px;
 
-      &--textarea {
-        background-color: map.get($theme-colors, "dark");
-      }
+        &--phone {
+          border-style: solid;
+          border-color: map-get($theme-colors, "light");
+        }
 
-      &--button {
-        background-image: linear-gradient(
-          90deg,
-          map.get($theme-colors, "light") 0%,
-          map.get($theme-colors, "primary") 25%,
-          map.get($theme-colors, "secondary") 50%,
-          map.get($theme-colors, "dark") 75%,
-          map.get($theme-colors, "light") 100%
-        );
-      }
-    }
-
-    &__label {
-      font-size: .8rem;
-      font-weight: 500;
-      color: map.get($theme-colors, "dark");
-
-      &--textarea {
-        color: map.get($theme-colors, "light");
-      }
-    }
-
-    &__input {
-      height: 2.5rem;
-
-      color: map.get($theme-colors, "dark");
-
-      border: none;
-      border-radius: 2px;
-
-      &--phone {
-        border-style: solid;
-        border-color: map-get($theme-colors, "light");
-      }
-
-      &--button {
-        box-shadow: 3px 4px 13px -1px map.get($theme-colors, "dark");
-      }
-    }
-  }
-}
-
-@layer effects {
-  .contact-form {
-    &__container:hover > &__label {
-      font-size: 1rem;
-
-      transition: font-size .2s ease-in-out;
-    }
-
-    &__container {
-      &--button:hover {
-        animation: slidebg 15s linear infinite;
-      }
-
-      &--button:hover > .contact-form__input--button {
-        transform: scale(1.05);
-
-        transition: transform .2s ease-in-out;
+        &--button {
+          box-shadow: 3px 4px 13px -1px map.get($theme-colors, "dark");
+        }
       }
     }
   }
 
-  @keyframes slidebg {
-    to {
-      background-position:200vw;
+  @layer colors-p3 {
+    @supports(background-color: color(display-p3 0 0 .47)) {
+      .contact-form {
+        &__container {
+          &--name {
+            background-color: map.get($theme-colors-p3, "primary");
+          }
+
+          &--email {
+            background-color: map.get($theme-colors-p3, "secondary");
+          }
+
+          &--phone {
+            background-color: map.get($theme-colors-p3, "info");
+          }
+
+          &--subject {
+            background-color: map.get($theme-colors-p3, "light");
+          }
+
+          &--textarea {
+            background-color: map.get($theme-colors-p3, "dark");
+          }
+
+          &--button {
+            background-image: linear-gradient(
+              90deg,
+              map.get($theme-colors-p3, "light") 0%,
+              map.get($theme-colors-p3, "primary") 25%,
+              map.get($theme-colors-p3, "secondary") 50%,
+              map.get($theme-colors-p3, "dark") 75%,
+              map.get($theme-colors-p3, "light") 100%
+            );
+          }
+        }
+
+        &__label {
+          color: map.get($theme-colors-p3, "dark");
+
+          &--textarea {
+            color: map.get($theme-colors-p3, "light");
+          }
+        }
+
+        &__input {
+          color: map.get($theme-colors-p3, "dark");
+
+          &--phone {
+            border-color: map-get($theme-colors-p3, "light");
+          }
+
+          &--button {
+            box-shadow: 3px 4px 13px -1px map.get($theme-colors-p3, "dark");
+          }
+        }
+      }
+    }
+  }
+
+  @layer effects {
+    .contact-form {
+      &__container:hover > &__label {
+        font-size: 1rem;
+
+        transition: font-size .2s ease-in-out;
+      }
+
+      &__container {
+        &--button:hover {
+          animation: slidebg 15s linear infinite;
+        }
+
+        &--button:hover > .contact-form__input--button {
+          transform: scale(1.05);
+
+          transition: transform .2s ease-in-out;
+        }
+      }
+    }
+
+    @keyframes slidebg {
+      to {
+        background-position:200vw;
+      }
     }
   }
 }
@@ -99,14 +160,14 @@
   .container-contact {
     container-type: inline-size;
 
-    margin-top: 5vh;
+    margin-top: 5dvh;
   }
 
   .contact-form {
     display: flex;
     flex-direction: column;
 
-    height: 60vh;
+    height: 80dvh;
 
     &__title { text-align: center; }
 
@@ -116,12 +177,14 @@
       justify-content: start;
 
       padding-inline: 10vw;
-      margin-block: 1vh;
+      margin-block: 1dvh;
     }
 
     &__input {
+      height: 2.5rem;
+
       &--textarea {
-        height: 40%;
+        height: 7rem;
       }
     }
   }
@@ -131,6 +194,8 @@
       display: grid;
       grid-template-columns: [contact1] 1fr [contact2] 1fr [textarea] 4fr;
       grid-template-rows: [name] 1fr [email-phone1] 1fr [email-phone2] 1fr;
+
+      height: 60dvh;
 
       &__container {
         display: flex;
@@ -178,6 +243,10 @@
       }
 
       &__input {
+        &--textarea {
+          height: 40%;
+        }
+
         &--button {
           width: 30%;
           margin: auto !important;
