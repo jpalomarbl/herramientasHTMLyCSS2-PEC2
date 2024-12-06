@@ -1,18 +1,5 @@
 @use "sass:map";
 
-// This forces the div.container to use all the
-// remaining space
-html, body {
-  height: 100%; /* Asegura que el html y body ocupen todo el viewport */
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-
-  width: 100%;
-}
-
 /* @define container-speakers */
 // The main container for the speakers page.
 .container-speakers {
@@ -58,19 +45,13 @@ body {
 }
 
 @container (max-width: #{map.get($grid-breakpoints, "sm")}) {
-  .speaker-card {
-    flex: 0 0 70cqw;
-  }
+  .speaker-card { flex: 0 0 70cqw; }
 }
 
 @container (max-width: #{map.get($grid-breakpoints, "md")}) {
-  .speaker-card {
-    flex: 0 0 60cqw;
-  }
+  .speaker-card { flex: 0 0 60cqw; }
 }
 
 @container (min-width: #{map.get($grid-breakpoints, "xl")}) {
-  .speaker-card {
-    flex: 0 0 30cqw;
-  }
+  .speaker-card { flex: 0 0 30cqw; }
 }

@@ -4,13 +4,9 @@
 .speaker-card {
   border: none;
 
-  &__img {
-    border-radius: 5px;
-  }
+  &__img { border-radius: 5px; }
 
-  &__body {
-    color: map.get($theme-colors, "secondary");
-  }
+  &__body { color: map.get($theme-colors, "secondary"); }
 
   &__title {
     color: map.get($theme-colors, "primary");

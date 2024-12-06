@@ -5,22 +5,14 @@
   // There are two contact lists. A longer one for desktop
   // and a shorter one for mobile.
   &__contact {
-    &--desktop {
-      display: none;
-    }
+    &--desktop { display: none; }
 
-    &--mobile {
-      display: block;
-    }
+    &--mobile { display: block; }
   }
 
-  &__list-item {
-    border: none !important;
-  }
+  &__list-item { border: none !important; }
 
-  &__horizontal {
-    border-width: 2px;
-  }
+  &__horizontal { border-width: 2px; }
 
   &__links { display: none !important; }
 
@@ -58,21 +50,15 @@
     &__contact {
       margin-bottom: 0 !important;
 
-      &--desktop {
-        display: block;
-      }
+      &--desktop { display: block; }
 
-      &--mobile {
-        display: none;
-      }
+      &--mobile { display: none; }
     }
   }
 }
 
 @include media-breakpoint-up(md) {
   .footer {
-    &__links {
-      display: flex !important;
-    }
+    &__links { display: flex !important; }
   }
 }

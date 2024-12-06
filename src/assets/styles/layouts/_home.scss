@@ -1,18 +1,5 @@
 @use "sass:map";
 
-// This forces the div.container to use all the
-// remaining space
-html, body {
-  height: 100dvh; /* Asegura que el html y body ocupen todo el viewport */
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-
-  width: 100%;
-}
-
 /* @define container */
 // The main container for the home page.
 .container {
@@ -58,9 +45,7 @@ body {
     text-shadow: 1px 2px 4px map.get($theme-colors, "dark");
   }
 
-  &__text {
-    font-size: map.get($font-sizes, 5);
-  }
+  &__text { font-size: map.get($font-sizes, 5); }
 
   &__link {
     color: map.get($theme-colors, "secondary");
@@ -121,17 +106,13 @@ body {
 
   @include media-breakpoint-down(sm) {
     /* @define title */
-    .title {
-      font-size: 6rem;
-    }
+    .title { font-size: 6rem; }
   }
 
   // This is an arbitrary "mobile-size" breakpoint
   @media screen and (max-width: 412px) {
     /* @define title */
-    .title {
-      font-size: 4rem;
-    }
+    .title { font-size: 4rem; }
   }
 
   /* @define info */
@@ -184,40 +165,26 @@ body {
 
   @container (max-width: 204px) {
     .info {
-      &__title {
-        font-size: map.get($font-sizes, 5);
-      }
+      &__title { font-size: map.get($font-sizes, 5); }
 
-      &__text {
-        font-size: map.get($font-sizes, 6);
-      }
+      &__text { font-size: map.get($font-sizes, 6); }
     }
   }
 
   @container (min-width: 560px) {
     .info {
-      &__title {
-        font-size: map.get($font-sizes, 3);
-      }
+      &__title { font-size: map.get($font-sizes, 3); }
 
-      &__text {
-        font-size: map.get($font-sizes, 4);
-      }
+      &__text { font-size: map.get($font-sizes, 4); }
     }
   }
 }
 
 // Slow up and down animation fo the info text box.
 @keyframes info-animation {
-  0% {
-    transform: translateY(-.5vh);
-  }
+  0% { transform: translateY(-.5vh); }
 
-  50% {
-    transform: translateY(.5vh);
-  }
+  50% { transform: translateY(.5vh); }
 
-  100% {
-    transform: translateY(-.5vh);
-  }
+  100% { transform: translateY(-.5vh); }
 }

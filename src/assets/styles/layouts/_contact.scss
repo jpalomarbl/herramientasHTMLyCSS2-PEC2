@@ -94,9 +94,7 @@
       }
 
       &__input {
-        &--textarea {
-          height: 40%;
-        }
+        &--textarea { height: 40%; }
 
         &--button {
           width: 30%;
@@ -119,25 +117,15 @@
   @layer theme {
     .contact-form {
       &__container {
-        &--name {
-          background-color: map.get($theme-colors, "primary");
-        }
+        &--name { background-color: map.get($theme-colors, "primary"); }
 
-        &--email {
-          background-color: map.get($theme-colors, "secondary");
-        }
+        &--email { background-color: map.get($theme-colors, "secondary"); }
 
-        &--phone {
-          background-color: map.get($theme-colors, "info");
-        }
+        &--phone { background-color: map.get($theme-colors, "info"); }
 
-        &--subject {
-          background-color: map.get($theme-colors, "light");
-        }
+        &--subject { background-color: map.get($theme-colors, "light"); }
 
-        &--textarea {
-          background-color: map.get($theme-colors, "dark");
-        }
+        &--textarea { background-color: map.get($theme-colors, "dark"); }
 
         &--button {
           background-image: linear-gradient(
@@ -156,9 +144,7 @@
         font-weight: 500;
         color: map.get($theme-colors, "dark");
 
-        &--textarea {
-          color: map.get($theme-colors, "light");
-        }
+        &--textarea { color: map.get($theme-colors, "light"); }
       }
 
       &__input {
@@ -172,9 +158,7 @@
           border-color: map.get($theme-colors, "light");
         }
 
-        &--button {
-          box-shadow: 3px 4px 13px -1px map.get($theme-colors, "dark");
-        }
+        &--button { box-shadow: 3px 4px 13px -1px map.get($theme-colors, "dark"); }
       }
     }
   }
@@ -183,25 +167,15 @@
     @supports(background-color: color(display-p3 0 0 .47)) {
       .contact-form {
         &__container {
-          &--name {
-            background-color: map.get($theme-colors-p3, "primary");
-          }
+          &--name { background-color: map.get($theme-colors-p3, "primary"); }
 
-          &--email {
-            background-color: map.get($theme-colors-p3, "secondary");
-          }
+          &--email { background-color: map.get($theme-colors-p3, "secondary"); }
 
-          &--phone {
-            background-color: map.get($theme-colors-p3, "info");
-          }
+          &--phone { background-color: map.get($theme-colors-p3, "info"); }
 
-          &--subject {
-            background-color: map.get($theme-colors-p3, "light");
-          }
+          &--subject { background-color: map.get($theme-colors-p3, "light"); }
 
-          &--textarea {
-            background-color: map.get($theme-colors-p3, "dark");
-          }
+          &--textarea { background-color: map.get($theme-colors-p3, "dark"); }
 
           &--button {
             background-image: linear-gradient(
@@ -218,21 +192,15 @@
         &__label {
           color: map.get($theme-colors-p3, "dark");
 
-          &--textarea {
-            color: map.get($theme-colors-p3, "light");
-          }
+          &--textarea { color: map.get($theme-colors-p3, "light"); }
         }
 
         &__input {
           color: map.get($theme-colors-p3, "dark");
 
-          &--phone {
-            border-color: map.get($theme-colors-p3, "light");
-          }
+          &--phone { border-color: map.get($theme-colors-p3, "light"); }
 
-          &--button {
-            box-shadow: 3px 4px 13px -1px map.get($theme-colors-p3, "dark");
-          }
+          &--button { box-shadow: 3px 4px 13px -1px map.get($theme-colors-p3, "dark"); }
         }
       }
     }
@@ -247,9 +215,7 @@
       }
 
       &__container {
-        &--button:hover {
-          animation: slidebg 15s linear infinite;
-        }
+        &--button:hover { animation: slidebg 15s linear infinite; }
 
         &--button:hover > .contact-form__input--button {
           transform: scale(1.05);
@@ -261,9 +227,7 @@
 
     // The gradient background sliding animation for the button.
     @keyframes slidebg {
-      to {
-        background-position:200vw;
-      }
+      to { background-position:200vw; }
     }
   }
 }

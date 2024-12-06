@@ -7,9 +7,7 @@
 @layer theme {
   /* @define container-info */
   // Main container for info page
-  .container-info {
-    color: map.get($theme-colors, "primary");
-  }
+  .container-info { color: map.get($theme-colors, "primary"); }
 
   /* @define header-info */
   // This container holds the title and author of the article
@@ -63,9 +61,7 @@
       margin-bottom: 5vh;
       height: 30vh;
 
-      &__title {
-        margin-bottom: 5vh !important;
-      }
+      &__title { margin-bottom: 5vh !important; }
     }
   }
 
@@ -76,36 +72,58 @@
       margin-bottom: 10vh;
       height: 50vh;
 
-      &__title {
-        margin-bottom: 10vh !important;
-      }
+      &__title { margin-bottom: 10vh !important; }
     }
   }
 
   // This basically groups and selects all of the text, text containers and the image.
-  :is(.begining, .begining__p1, .begining__p2, .list-info, .big-paragraph, .before-img, .ending, img) {
-    text-align: justify;
-  }
+  :is(
+    .begining,
+    .begining__p1,
+    .begining__p2,
+    .list-info,
+    .big-paragraph,
+    .before-img,
+    .ending,
+    img
+  ) { text-align: justify; }
 
   @container (max-width: #{map.get($grid-breakpoints, "md")}) {
     // This basically groups and selects all of the text, text containers and the image.
-    :is(.begining, .list-info, .big-paragraph, .before-img, .ending, img) {
-      width: 80vw;
-    }
+    :is(
+      .begining,
+      .list-info,
+      .big-paragraph,
+      .before-img,
+      .ending,
+      img
+    ) { width: 80vw; }
   }
 
   @container (min-width: #{map.get($grid-breakpoints, "md")}) and (max-width: #{map.get($grid-breakpoints, "lg")}) {
     // This basically groups and selects all of the text, text containers and the image.
-    :is(.begining, .list-info, .big-paragraph, .before-img, .ending, ul, img) {
-      width: 60vw;
-    }
+    :is(
+      .begining,
+      .list-info,
+      .big-paragraph,
+      .before-img,
+      .ending,
+      img
+    ) { width: 60vw; }
   }
 
   @container (max-width: #{map.get($grid-breakpoints, "lg")}) {
     // This basically groups and selects all of the text, text containers and the image.
-    :is(.begining, .begining__p1, .begining__p2, .list-info, .big-paragraph, .before-img, .ending, ul, img) {
-      padding-inline: 0 !important;
-    }
+    :is(
+      .begining,
+      .begining__p1,
+      .begining__p2,
+      .list-info,
+      .big-paragraph,
+      .before-img,
+      .ending,
+      img
+    ) { padding-inline: 0 !important; }
   }
 
   /* @define list-info */
@@ -127,24 +145,22 @@
   }
 
   /* @define image */
-  .image {
-    margin-block: 5vh;
-  }
+  .image { margin-block: 5vh; }
 
   /* @define ending */
   // The las paragraph.
-  .ending {
-    margin-bottom: 10vh !important;
-  }
+  .ending { margin-bottom: 10vh !important; }
 
   @container (min-width: #{map.get($grid-breakpoints, "lg")}) {
-    :is(.begining, .list-info, .big-paragraph, .before-img, .ending, ul) {
-      width: 40vw;
-    }
+    :is(
+      .begining,
+      .list-info,
+      .big-paragraph,
+      .before-img,
+      .ending
+    ) { width: 40vw; }
 
     /* @define image */
-    .image {
-      width: 50vw;
-    }
+    .image { width: 50vw; }
   }
 }
