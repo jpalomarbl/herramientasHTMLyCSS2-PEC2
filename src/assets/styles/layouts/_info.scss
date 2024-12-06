@@ -20,7 +20,7 @@
 
     &__title,
     &__author {
-      color: map.get($theme-colors, "secondary") !important;
+      color: map.get($theme-colors, "light") !important;
       text-shadow: 1px 2px 4px map.get($theme-colors, "dark");
     }
   }
@@ -52,6 +52,8 @@
     justify-content: center;
 
     width: 100%;
+
+    container-type: inline-size;
   }
 
   @container (max-width: #{map.get($grid-breakpoints, "md")}) {
@@ -143,18 +145,6 @@
     /* @define image */
     .image {
       width: 50vw;
-    }
-  }
-
-  @container (min-width: #{map.get($grid-breakpoints, "xl")}) {
-    /* @define begining */
-    .begining__p1 {
-      padding-left: 0 !important;
-    }
-
-
-    .begining__p2 {
-      padding-right: 0 !important;
     }
   }
 }
