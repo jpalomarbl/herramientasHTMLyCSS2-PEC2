@@ -78,8 +78,6 @@ body {
 
     padding: 0;
     height: fit-content;
-
-    container-type: inline-size;
   }
 
   /* @define title */
@@ -121,7 +119,7 @@ body {
     }
   }
 
-  @container (max-width: #{map.get($grid-breakpoints, "sm")}) {
+  @include media-breakpoint-down(sm) {
     /* @define title */
     .title {
       font-size: 6rem;
@@ -129,7 +127,7 @@ body {
   }
 
   // This is an arbitrary "mobile-size" breakpoint
-  @container (max-width: 412px) {
+  @media screen and (max-width: 412px) {
     /* @define title */
     .title {
       font-size: 4rem;
@@ -150,6 +148,7 @@ body {
     padding-bottom: 1vh;
     margin: auto;
     height: fit-content;
+    width: 70%;
 
     background-color: map.get($theme-colors, "dark");
     box-shadow: 10px 10px 8px 0px rgba(0, 0, 0, .5);
@@ -159,6 +158,8 @@ body {
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
+
+    container-type: inline-size;
 
     &__title {
       margin-bottom: 2vh;
@@ -181,7 +182,7 @@ body {
     &__link:hover { color: map.get($theme-colors, "primary"); }
   }
 
-  @container (max-width: #{map.get($grid-breakpoints, "sm")}) {
+  @container (max-width: 204px) {
     .info {
       &__title {
         font-size: map.get($font-sizes, 5);
@@ -193,7 +194,7 @@ body {
     }
   }
 
-  @container (min-width: #{map.get($grid-breakpoints, "xl")}) {
+  @container (min-width: 560px) {
     .info {
       &__title {
         font-size: map.get($font-sizes, 3);
