@@ -1,5 +1,16 @@
 @use "sass:map";
 
+// This forces the div.container to use all the
+// remaining space
+html, body {
+  height: 100dvh; /* Asegura que el html y body ocupen todo el viewport */
+}
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 /* @define container */
 // The main container for the home page.
 .container {
